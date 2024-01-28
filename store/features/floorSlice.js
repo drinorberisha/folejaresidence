@@ -1,0 +1,55 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  floorsByBuilding: {
+    'building1': [
+      { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building1-Baza e perdheses.png' },
+      { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building1-Kati karakteristik.png' },
+      // Add other floors for building1
+    ],
+    'building2':[
+      { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building2-Baza e perdheses.png' },
+      { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building2-Kati karakteristik.png' }, 
+    ],
+    'building3':[
+        { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building3-Baza e perdheses.png' },
+        { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building3-Kati karakteristik.png' },
+        { id: 'floor3', name: 'Baza e katit 1', imagePath: '/foto/katet/building3-Baza e katit 1.png' }, 
+    ],
+    'building4':[
+        { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building4-Baza e perdheses.png' },
+        { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building4-Kati karakteristik.png' },
+        { id: 'floor3', name: 'Baza e katit 1', imagePath: '/foto/katet/building4-Baza e katit 1.png' }, 
+    ],
+    'building5':[
+        { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building5-Baza e perdheses.png' },
+        { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building5-Kati karakteristik.png' }, 
+    ],
+    'building6':[
+        { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building6-Baza e perdheses.png' },
+        { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building6-Kati karakteristik.png' },
+        { id: 'floor3', name: 'Baza e katit 1', imagePath: '/foto/katet/building6-Baza e katit 1.png' }, 
+    ],
+    'building7':[
+        { id: 'floor1', name: 'Baza e perdheses', imagePath: '/foto/katet/building7-Baza e perdheses.png' },
+        { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building7-Kati karakteristik.png' },
+        { id: 'floor3', name: 'Baza e katit 1', imagePath: '/foto/katet/building7-Baza e katit 1.png' }, 
+    ],
+},
+  selectedFloor: null,
+};
+
+export const floorSlice = createSlice({
+  name: 'floor',
+  initialState,
+  reducers: {
+    selectFloor: (state, action) => {
+      state.selectedFloor = action.payload;
+    },
+    // Add any other reducers as needed
+  },
+});
+
+export const { selectFloor } = floorSlice.actions;
+
+export default floorSlice.reducer;
