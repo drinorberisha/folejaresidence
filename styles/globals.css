@@ -169,3 +169,19 @@ body {
     width: 60%;
   }
 }
+
+.rotate-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the viewport */
+  text-align: center;
+  font-size: 1.5em;
+}
+.rotate-message video {
+  width: 100%; /* Adjust as necessary */
+  max-width: 1000px; /* Adjust as necessary */
+  height: auto;
+  margin-bottom: 20px;
+}

@@ -8,7 +8,7 @@ const BackButton = () => {
   };
 
   return (
-    <button onClick={goBack} className="p-2 bg-blue-500 text-white rounded">
+    <button onClick={goBack} className="p-2 bg-blue-500 hover:bg-blue-700 text-white rounded">
       Kthehu prapa
     </button>
   );
