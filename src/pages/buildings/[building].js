@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import BackButton from '@/components/BackButton'; // Adjust the path as necessary
 import RotateMessage from '@/components/RotateMessage';
+import useOrientation from '@/hooks/useOrientation';
 
 const buttonPositions = {
   'building1': {
@@ -60,10 +61,16 @@ const Building = () => {
   }
 
   const floors = buttonPositions[`building${buildingId}`] || {};
+  const isLandscape = useOrientation(); // use the hook
+
+
+  if (!isLandscape) {
+    return <RotateMessage />;
+  }
+
 
   return (
     <>
-    <RotateMessage/>
     <div className="bg-white h-screen relative">
    
       <div 

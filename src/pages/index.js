@@ -9,6 +9,7 @@ import BuildingButton from '@/components/BuildingButton';
 import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
 import RotateMessage from '@/components/RotateMessage';
+import useOrientation from '@/hooks/useOrientation';
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const buildings = useSelector((state) => state.building.buildings);
+  const isLandscape = useOrientation(); // use the hook
 
   // State and handlers
   const [openModal, setOpenModal] = useState(null);
@@ -44,15 +46,14 @@ const Home = () => {
   const imageUrl2 = '/foto/situacioni.png';
   const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg'];
 
-  // Update rotate message state based on orientation
 
-
-  // Conditional rendering for rotate message
-
+  if (!isLandscape) {
+    return <RotateMessage />;
+  }
   return (
     <>
-     <RotateMessage/>
-    <div className="viewport relative">
+      
+      <div className="viewport relative">
      
       {buildings.map((building) => (
         <BuildingButton

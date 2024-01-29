@@ -5,10 +5,12 @@ import Image from 'next/image';
 import BackButton from '@/components/BackButton';
 import HomeButton from '@/components/HomeButton';
 import RotateMessage from '@/components/RotateMessage';
+import useOrientation from '@/hooks/useOrientation';
 
 const Apartment = () => {
   const router = useRouter();
   const { apartment } = router.query; // "building1-Kati karakteristik-2"
+  const isLandscape = useOrientation(); // use the hook
 
   // Function to extract building, floor, and apartment index from the URL
   const extractInfoFromURL = (apartment) => {
@@ -31,9 +33,15 @@ const Apartment = () => {
 
   const imagePath = getImagePath(building, floor, apartmentIndex);
 
+
+
+
+  if (!isLandscape) {
+    return <RotateMessage />;
+  }
+
   return (
     <>
-    <RotateMessage/>
     <div className="bg-white h-screen relative">
         <div className="absolute top-0 left-0 z-20 p-4">
         <BackButton />

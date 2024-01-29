@@ -5,7 +5,7 @@ import Image from 'next/image';
 import BackButton from '@/components/BackButton';
 import HomeButton from '@/components/HomeButton';
 import RotateMessage from '@/components/RotateMessage';
-
+import useOrientation from '@/hooks/useOrientation';
 
 const apartmentPositions = {
   'building1-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
@@ -32,6 +32,9 @@ const Floors = () => {
 
   const currentFloor = floors?.find(floor => floor.name === floorName);
 
+  const isLandscape = useOrientation(); // use the hook
+
+
   if (!currentFloor) {
     return <p>Floor not found</p>;
   }
@@ -44,9 +47,13 @@ const Floors = () => {
     router.push(`/apartments/${positionKey}-${apartmentIndex}`);
   };
 
+
+  if (!isLandscape) {
+    return <RotateMessage />;
+  }
+
   return (
     <>
-    <RotateMessage/>
     <div className="bg-white h-screen relative">
       <div className="absolute z-20 p-4">
         <BackButton />
