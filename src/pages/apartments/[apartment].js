@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import BackButton from '@/components/BackButton';
 import HomeButton from '@/components/HomeButton';
+import RotateMessage from '@/components/RotateMessage';
 
 const Apartment = () => {
   const router = useRouter();
@@ -31,6 +32,8 @@ const Apartment = () => {
   const imagePath = getImagePath(building, floor, apartmentIndex);
 
   return (
+    <>
+    <RotateMessage/>
     <div className="bg-white h-screen relative">
         <div className="absolute top-0 left-0 z-20 p-4">
         <BackButton />
@@ -50,6 +53,7 @@ const Apartment = () => {
     </div>
     {/* Additional content */}
   </div>
+  </>
 );
 };
 

@@ -8,41 +8,20 @@ import Link from 'next/link';
 import BuildingButton from '@/components/BuildingButton';
 import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
+import RotateMessage from '@/components/RotateMessage';
 
 // useOrientation Hook
-const useOrientation = () => {
-  const [isLandscape, setIsLandscape] = useState(undefined);
 
-  useEffect(() => {
-    const getOrientation = () => {
-      return window.innerWidth > window.innerHeight;
-    };
-
-    setIsLandscape(getOrientation());
-
-    const handleResize = () => {
-      setIsLandscape(getOrientation());
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return isLandscape;
-};
 
 // Home Component
 const Home = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const buildings = useSelector((state) => state.building.buildings);
-  const isLandscape = useOrientation(); // Hook is called here, unconditionally
 
   // State and handlers
   const [openModal, setOpenModal] = useState(null);
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
-  const [showRotateMessage, setShowRotateMessage] = useState(false);
 
   // Handle building click
   const handleBuildingClick = (buildingId) => {
@@ -62,25 +41,15 @@ const Home = () => {
   const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg'];
 
   // Update rotate message state based on orientation
-  useEffect(() => {
-    setShowRotateMessage(!isLandscape);
-  }, [isLandscape]);
+
 
   // Conditional rendering for rotate message
-  if (showRotateMessage) {
-    return (
-      <div className="rotate-message">
-        <video autoPlay loop muted playsInline>
-          <source src="/video/video1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    );
-  }
-
 
   return (
+    <>
+     <RotateMessage/>
     <div className="viewport relative">
+     
       {buildings.map((building) => (
         <BuildingButton
           key={building.id}
@@ -104,6 +73,7 @@ const Home = () => {
       <Modal isOpen={openModal === 'modal2'} onClose={closeModal} imageUrl={imageUrl2} />
       <Carousel images={images} isOpen={isCarouselOpen} onClose={closeCarousel} />
     </div>
+    </>
   );
 };
 

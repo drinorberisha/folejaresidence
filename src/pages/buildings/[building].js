@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import BackButton from '@/components/BackButton'; // Adjust the path as necessary
+import RotateMessage from '@/components/RotateMessage';
 
 const buttonPositions = {
   'building1': {
@@ -61,6 +62,8 @@ const Building = () => {
   const floors = buttonPositions[`building${buildingId}`] || {};
 
   return (
+    <>
+    <RotateMessage/>
     <div className="bg-white h-screen relative">
    
       <div 
@@ -85,6 +88,7 @@ const Building = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

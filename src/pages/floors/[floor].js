@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import BackButton from '@/components/BackButton';
 import HomeButton from '@/components/HomeButton';
+import RotateMessage from '@/components/RotateMessage';
 
 
 const apartmentPositions = {
@@ -44,6 +45,8 @@ const Floors = () => {
   };
 
   return (
+    <>
+    <RotateMessage/>
     <div className="bg-white h-screen relative">
       <div className="absolute z-20 p-4">
         <BackButton />
@@ -75,6 +78,7 @@ const Floors = () => {
       </div>
       {/* Additional content */}
     </div>
+    </>
   );
 };
 
