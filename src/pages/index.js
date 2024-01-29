@@ -10,6 +10,10 @@ import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
 import RotateMessage from '@/components/RotateMessage';
 
+
+
+import {Skeleton} from "@nextui-org/react";
+
 // useOrientation Hook
 
 
@@ -69,9 +73,19 @@ const Home = () => {
           Shiko Punimet
         </button>
       </div>
-      <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1} />
-      <Modal isOpen={openModal === 'modal2'} onClose={closeModal} imageUrl={imageUrl2} />
-      <Carousel images={images} isOpen={isCarouselOpen} onClose={closeCarousel} />
+
+
+      <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1}> 
+        <Skeleton className='rounded'/>
+      </Modal>
+      
+      <Modal isOpen={openModal === 'modal2'} onClose={closeModal} imageUrl={imageUrl2}>
+        <Skeleton className='rounded'/>
+      </Modal>
+        
+      <Carousel images={images} isOpen={isCarouselOpen} onClose={closeCarousel}> 
+        <Skeleton className='rounded'/>
+      </Carousel>
     </div>
     </>
   );
