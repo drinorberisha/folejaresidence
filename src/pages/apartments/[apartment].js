@@ -25,6 +25,7 @@ const Apartment = () => {
 
   // Function to determine the correct image path based on building, floor, and apartment index
   const getImagePath = (building, floor, apartmentIndex) => {
+    
     // Logic to determine the image path
     // This is where you'll map the combination of building, floor, and apartment index to an image path
     // For example:
@@ -39,7 +40,6 @@ const Apartment = () => {
   if (!isLandscape) {
     return <RotateMessage />;
   }
-
   return (
     <>
     <div className="bg-white h-screen relative">

@@ -44,7 +44,7 @@ const Floors = () => {
 
   const handleApartmentClick = (apartmentIndex) => {
     // Navigate to the apartment page with a specific identifier
-    router.push(`/apartments/${positionKey}-${apartmentIndex}`);
+    router.push(`/apartments/${positionKey}-${apartmentIndex + 1}`);
   };
 
 
