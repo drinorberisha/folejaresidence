@@ -7,19 +7,19 @@ import HomeButton from '@/components/HomeButton';
 
 
 const apartmentPositions = {
-    'building1-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
-    'building2-Kati karakteristik': [{ top: '54%', left: '39%' }, { top: '32%', left: '38%' }, { top: '21%', left: '47%' },{ top: '30%', left: '57%' },{ top: '54%', left: '55%' },],
-    'building3-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
-    'building4-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
-    'building5-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '34%', left: '32%' }, { top: '54%', left: '32%' },{ top: '54%', left: '48%' },{ top: '34%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
-    'building6-Kati karakteristik': [{ top: '50%', left: '30%' }, { top: '28%', left: '34%' }, { top: '53%', left: '42%' },{ top: '54%', left: '55%' },{ top: '30%', left: '57%' },],
-    'building7-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '34%', left: '32%' }, { top: '54%', left: '32%' },{ top: '54%', left: '48%' },{ top: '34%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
-    'building3-Baza e perdheses':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
-    'building4-Baza e perdheses':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
-    'building6-Baza e perdheses':[{ top: '22%', left: '35%' },{ top: '44%', left: '26%' },{ top: '51%', left: '32%' },{ top: '54%', left: '43%' },{ top: '54%', left: '54%' },{ top: '54%', left: '62%' },{ top: '32%', left: '62%' }],
-    'building7-Baza e perdheses':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
-    'building6-Baza e katit 1':[{ top: '57%', left: '44%' },{ top: '37%', left: '53%' },{ top: '35%', left: '37%' },],
-    'building7-Baza e katit 1':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
+  'building1-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
+  'building2-Kati karakteristik': [{ top: '54%', left: '39%' }, { top: '32%', left: '38%' }, { top: '21%', left: '47%' },{ top: '30%', left: '57%' },{ top: '54%', left: '55%' },],
+  'building3-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
+  'building4-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '54%', left: '32%' }, { top: '34%', left: '32%' },{ top: '34%', left: '48%' },{ top: '54%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
+  'building5-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '34%', left: '32%' }, { top: '54%', left: '32%' },{ top: '54%', left: '48%' },{ top: '34%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
+  'building6-Kati karakteristik': [{ top: '50%', left: '30%' }, { top: '28%', left: '34%' }, { top: '53%', left: '42%' },{ top: '54%', left: '55%' },{ top: '30%', left: '57%' },],
+  'building7-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '34%', left: '32%' }, { top: '54%', left: '32%' },{ top: '54%', left: '48%' },{ top: '34%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
+  'building3-Afarizem P':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
+  'building4-Afarizem P':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
+  'building6-Afarizem P':[{ top: '22%', left: '35%' },{ top: '44%', left: '26%' },{ top: '51%', left: '32%' },{ top: '54%', left: '43%' },{ top: '54%', left: '54%' },{ top: '54%', left: '62%' },{ top: '32%', left: '62%' }],
+  'building7-Afarizem P':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
+  'building6-Baza e katit 1':[{ top: '57%', left: '44%' },{ top: '37%', left: '53%' },{ top: '35%', left: '37%' },],
+  'building7-Baza e katit 1':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
 };
 
 

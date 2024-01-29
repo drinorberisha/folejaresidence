@@ -6,35 +6,42 @@ import BackButton from '@/components/BackButton'; // Adjust the path as necessar
 
 const buttonPositions = {
   'building1': {
-      'Baza e perdheses': { top: '67%', left: '48%' },
-      'Kati karakteristik': { top: '55%', left: '48%' }
+      'Garazha dhe depo': { top: '75%', left: '48%' },
+      'Afarizem SU': { top: '68%', left: '48%' },
+      'Afarizem P': { top: '61%', left: '48%' },
+      'Kati karakteristik': { top: '54%', left: '48%' }
   
   },
   'building2': {
-      'Baza e perdheses': { top: '73%', left: '49%' },
-      'Kati karakteristik': { top: '55%', left: '49%' }
+    'Garazha dhe depo': { top: '75%', left: '48%' },
+      'Afarizem SU': { top: '68%', left: '48%' },
+      'Afarizem P': { top: '61%', left: '48%' },
+      'Kati karakteristik': { top: '54%', left: '48%' }
+  
   },
   'building3': {
-      'Baza e perdheses': { top: '73%', left: '49%' },
-      'Baza e katit 1': { top: '67%', left: '49%' },
-      'Kati karakteristik': { top: '58%', left: '49%' }
+      'Afarizem SU': { top: '75%', left: '49%' },
+      'Afarizem P': { top: '68%', left: '49%' },
+      'Baza e katit 1': { top: '61%', left: '49%' },
+      'Kati karakteristik': { top: '54%', left: '49%' }
   },
   'building4': {
-      'Baza e perdheses': { top: '73%', left: '49%' },
-      'Baza e katit 1': { top: '64%', left: '49%' },
-      'Kati karakteristik': { top: '56%', left: '49%' }
+      'Afarizem SU': { top: '75%', left: '49%' },
+      'Afarizem P': { top: '68%', left: '49%' },
+      'Baza e katit 1': { top: '61%', left: '49%' },
+      'Kati karakteristik': { top: '54%', left: '49%' }
   },
   'building5': {
-      'Baza e perdheses': { top: '73%', left: '49%' },
+      'Afarizem P': { top: '73%', left: '49%' },
       'Kati karakteristik': { top: '55%', left: '49%' }
   },
   'building6': {
-      'Baza e perdheses': { top: '73%', left: '49%' },
+      'Afarizem P': { top: '73%', left: '49%' },
       'Baza e katit 1': { top: '64%', left: '49%' },
       'Kati karakteristik': { top: '56%', left: '49%' }
   },
   'building7': {
-      'Baza e perdheses': { top: '73%', left: '49%' },
+      'Afarizem P': { top: '73%', left: '49%' },
       'Baza e katit 1': { top: '64%', left: '49%' },
       'Kati karakteristik': { top: '56%', left: '49%' }
   },
