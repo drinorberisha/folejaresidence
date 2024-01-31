@@ -1,5 +1,6 @@
 // components/Modal.js
 import React from 'react';
+import Image from 'next/image';
 
 const Modal = ({ isOpen, onClose, imageUrl }) => {
   if (!isOpen) return null;
@@ -14,7 +15,7 @@ const Modal = ({ isOpen, onClose, imageUrl }) => {
           X
         </button>
         <div className="modal-content">
-          <img src={imageUrl} alt="Modal Content"/>
+          <Image src={imageUrl} width={920} height={600} alt="Modal Content"/>
         </div>
       </div>
     </div>

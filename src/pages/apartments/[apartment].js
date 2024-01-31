@@ -8,9 +8,10 @@ import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
 
 const Apartment = () => {
+  const isLandscape = useOrientation(); // use the hook
+
   const router = useRouter();
   const { apartment } = router.query; // "building1-Kati karakteristik-2"
-  const isLandscape = useOrientation(); // use the hook
 
   // Function to extract building, floor, and apartment index from the URL
   const extractInfoFromURL = (apartment) => {

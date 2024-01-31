@@ -51,6 +51,8 @@ const buttonPositions = {
 };
 
 const Building = () => {
+  const isLandscape = useOrientation(); // use the hook
+
   const router = useRouter();
   const { building: buildingId } = router.query;
   const buildings = useSelector(state => state.building.buildings);
@@ -61,7 +63,6 @@ const Building = () => {
   }
 
   const floors = buttonPositions[`building${buildingId}`] || {};
-  const isLandscape = useOrientation(); // use the hook
 
 
   if (!isLandscape) {

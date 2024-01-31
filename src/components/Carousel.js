@@ -1,4 +1,5 @@
 // components/Carousel.js
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 const Carousel = ({ images, isOpen, onClose }) => {
@@ -24,7 +25,7 @@ const Carousel = ({ images, isOpen, onClose }) => {
           X
         </button>
         <button onClick={prev} className="carousel-prev">&#10094;</button>
-        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+        <Image src={images[currentIndex]} width={960} height={720} alt={`Slide ${currentIndex}`} />
         <button onClick={next} className="carousel-next">&#10095;</button>
       </div>
     </div>
