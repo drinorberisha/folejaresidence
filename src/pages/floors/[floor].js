@@ -25,6 +25,8 @@ const apartmentPositions = {
 
 
 const Floors = () => {
+  const isLandscape = useOrientation(); // use the hook
+
   const router = useRouter();
   const { floor: floorName } = router.query;
   const selectedBuildingId = useSelector(state => state.building.selectedBuilding);
@@ -32,7 +34,6 @@ const Floors = () => {
 
   const currentFloor = floors?.find(floor => floor.name === floorName);
 
-  const isLandscape = useOrientation(); // use the hook
 
 
   if (!currentFloor) {
