@@ -26,11 +26,11 @@ const Apartment = () => {
 
   // Function to determine the correct image path based on building, floor, and apartment index
   const getImagePath = (building, floor, apartmentIndex) => {
-    
-    // Logic to determine the image path
-    // This is where you'll map the combination of building, floor, and apartment index to an image path
-    // For example:
-    return `/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
+    const cloudFrontDomain = 'd124q86xsdw2f2.cloudfront.net';
+    return `https://${cloudFrontDomain}/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
+    // return `https://foleja-bucket.s3.eu-central-1.amazonaws.com/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
+    // return `/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
+
   };
 
   const imagePath = getImagePath(building, floor, apartmentIndex);
@@ -52,12 +52,13 @@ const Apartment = () => {
       </div>
 
     <div className="h-full w-full flex justify-center items-center overflow-hidden">
-      <Image 
+    <Image 
         src={imagePath}
         alt={`Apartment Image`}
         layout="fill"
         objectFit="contain"
         quality={100}
+        
       />
     </div>
     {/* Additional content */}
