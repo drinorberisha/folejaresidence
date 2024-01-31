@@ -27,9 +27,9 @@ const Apartment = () => {
   // Function to determine the correct image path based on building, floor, and apartment index
   const getImagePath = (building, floor, apartmentIndex) => {
     const cloudFrontDomain = 'd124q86xsdw2f2.cloudfront.net';
-    return `https://${cloudFrontDomain}/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
+    // return `https://${cloudFrontDomain}/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
     // return `https://foleja-bucket.s3.eu-central-1.amazonaws.com/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
-    // return `/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
+    return `/foto/banesat/${building}/${floor}/apartment${apartmentIndex}.png`;
 
   };
 
