@@ -63,7 +63,9 @@ const Building = () => {
   }
 
   const floors = buttonPositions[`building${buildingId}`] || {};
-
+  const handleFloorClick = (floorName) => {
+    router.push(`/floors/building${buildingId}-${floorName}`);
+  };
 
   if (!isLandscape) {
     return <RotateMessage />;
@@ -89,7 +91,7 @@ const Building = () => {
             className="absolute bg-blue-500 text-white rounded p-2 sm:p-1 sm:text-sm"
             style={{ top: position.top, left: position.left }}
             
-            onClick={() => router.push(`/floors/${floorName}`)}
+            onClick={() => handleFloorClick(floorName)}
           >
             {floorName}
           </button>

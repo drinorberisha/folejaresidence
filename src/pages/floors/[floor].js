@@ -28,19 +28,19 @@ const Floors = () => {
   const isLandscape = useOrientation(); // use the hook
 
   const router = useRouter();
-  const { floor: floorName } = router.query;
-  const selectedBuildingId = useSelector(state => state.building.selectedBuilding);
-  const floors = useSelector(state => state.floor.floorsByBuilding[`building${selectedBuildingId}`]);
+  const { floor } = router.query; // "building1-Kati karakteristik"
+  const [selectedBuilding, ...floorNameArray] = floor ? floor.split('-') : [];
+  const floorName = floorNameArray.join('-');
 
-  const currentFloor = floors?.find(floor => floor.name === floorName);
-
+  const floors = useSelector(state => state.floor.floorsByBuilding[`${selectedBuilding}`]);
+  const currentFloor = floors?.find(f => f.name === floorName);
 
 
   if (!currentFloor) {
     return <p>Floor not found</p>;
   }
 
-  const positionKey = `building${selectedBuildingId}-${currentFloor.name}`;
+  const positionKey = `${selectedBuilding}-${currentFloor.name}`;
   const currentPositions = apartmentPositions[positionKey] || [];
 
   const handleApartmentClick = (apartmentIndex) => {
