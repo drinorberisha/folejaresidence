@@ -16,10 +16,8 @@ const apartmentPositions = {
   'building6-Kati karakteristik': [{ top: '50%', left: '30%' }, { top: '28%', left: '34%' }, { top: '53%', left: '42%' },{ top: '54%', left: '55%' },{ top: '30%', left: '57%' },],
   'building7-Kati karakteristik': [{ top: '54%', left: '22%' }, { top: '32%', left: '32%' }, { top: '54%', left: '32%' },{ top: '54%', left: '48%' },{ top: '32%', left: '48%' },{ top: '54%', left: '57%' },/* ... */],
   'building6-Townhouses Kati 1': [{ top: '50%', left: '45%' },{ top: '30%', left: '54%' },{ top: '30%', left: '37%' },],
-  'building7-Townhouses Kati 1':[{ top: '30%', left: '22%' },{ top: '54%', left: '22%' },{ top: '54%', left: '30%' },{ top: '30%', left: '32%' },{ top: '54%', left: '40%' },{ top: '54%', left: '47%' },{ top: '54%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
-
   'building6-Townhouses Perdhese':[{ top: '18%', left: '32%' },{ top: '35%', left: '28%' },{ top: '43%', left: '34%' },{ top: '50%', left: '45%' },{ top: '50%', left: '55%' },{ top: '50%', left: '62%' },{ top: '30%', left: '55%' },],
-  'building7-Townhouses Perdhese':[{ top: '30%', left: '22%' },{ top: '57%', left: '22%' },{ top: '57%', left: '30%' },{ top: '30%', left: '32%' },{ top: '57%', left: '40%' },{ top: '57%', left: '47%' },{ top: '57%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
+  'building7-Townhouses':[{ top: '30%', left: '22%' },{ top: '57%', left: '22%' },{ top: '57%', left: '30%' },{ top: '30%', left: '32%' },{ top: '57%', left: '40%' },{ top: '57%', left: '47%' },{ top: '57%', left: '57%' },{ top: '30%', left: '57%' },{ top: '30%', left: '47%' },],
 };
 
 

@@ -41,9 +41,8 @@ const buttonPositions = {
       'Kati karakteristik': { top: '56%', left: '49%' }
   },
   'building7': {
-      'Townhouses Perdhese': { top: '71%', left: '29%' },
-      'Townhouses Kati 1': { top: '63%', left: '29%' },
-      'Kati karakteristik': { top: '56%', left: '29%' }
+      'Townhouses': { top: '71%', left: '29%' },
+      'Kati karakteristik': { top: '63%', left: '29%' },
   },
 
 };
