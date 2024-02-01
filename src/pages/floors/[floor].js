@@ -40,6 +40,8 @@ const Floors = () => {
   const positionKey = `${selectedBuilding}-${currentFloor.name}`;
   const currentPositions = apartmentPositions[positionKey] || [];
 
+  const isDuplex = floorName === 'Townhouses Perdhese' || floorName === 'Townhouses';
+  
   const handleApartmentClick = (apartmentIndex) => {
     // Navigate to the apartment page with a specific identifier
     router.push(`/apartments/${positionKey}-${apartmentIndex + 1}`);
@@ -77,7 +79,7 @@ const Floors = () => {
             style={{ top: pos.top, left: pos.left }}
             onClick={() => handleApartmentClick(index)}
           >
-            Banesa {index + 1}
+      {isDuplex ? `Duplex ${index + 1}` : `Banesa ${index + 1}`}    
           </button>
         ))}
       </div>
