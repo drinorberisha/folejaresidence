@@ -22,30 +22,28 @@ const buttonPositions = {
   
   },
   'building3': {
-      'Afarizem SU': { top: '75%', left: '49%' },
-      'Afarizem P': { top: '68%', left: '49%' },
-      'Baza e katit 1': { top: '61%', left: '49%' },
-      'Kati karakteristik': { top: '54%', left: '49%' }
+      'Afarizem P': { top: '75%', left: '49%' },
+      'Baza e katit 1': { top: '68%', left: '49%' },
+      'Kati karakteristik': { top: '61%', left: '49%' },
   },
   'building4': {
-      'Afarizem SU': { top: '75%', left: '49%' },
-      'Afarizem P': { top: '68%', left: '49%' },
-      'Baza e katit 1': { top: '61%', left: '49%' },
-      'Kati karakteristik': { top: '54%', left: '49%' }
-  },
+    'Afarizem P': { top: '75%', left: '49%' },
+    'Baza e katit 1': { top: '68%', left: '49%' },
+    'Kati karakteristik': { top: '61%', left: '49%' },
+},
   'building5': {
       'Afarizem P': { top: '73%', left: '49%' },
       'Kati karakteristik': { top: '55%', left: '49%' }
   },
   'building6': {
-      'Afarizem P': { top: '73%', left: '49%' },
-      'Baza e katit 1': { top: '64%', left: '49%' },
+    'Townhouses Perdhese': { top: '71%', left: '49%' },
+      'Townhouses Kati 1': { top: '63%', left: '49%' },
       'Kati karakteristik': { top: '56%', left: '49%' }
   },
   'building7': {
-      'Afarizem P': { top: '73%', left: '49%' },
-      'Baza e katit 1': { top: '64%', left: '49%' },
-      'Kati karakteristik': { top: '56%', left: '49%' }
+      'Townhouses Perdhese': { top: '71%', left: '29%' },
+      'Townhouses Kati 1': { top: '63%', left: '29%' },
+      'Kati karakteristik': { top: '56%', left: '29%' }
   },
 
 };

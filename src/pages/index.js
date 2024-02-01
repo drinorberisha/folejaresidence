@@ -75,7 +75,6 @@ const Home = () => {
         </button>
       </div>
 
-
       <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1}> 
         <Skeleton className='rounded'/>
       </Modal>
