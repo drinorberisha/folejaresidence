@@ -31,7 +31,7 @@ const Apartment = () => {
     if (building === 'building7' && floor === 'Townhouses' && apartmentIndex >= 1 && apartmentIndex <= 9) {
       return true;
     }
-    if (building === 'building6' && floor === 'Townhouses Perdhese' && apartmentIndex >= 1 && apartmentIndex <= 6) {
+    if (building === 'building6' && floor === 'Townhouses Perdhese' && apartmentIndex >= 1 && apartmentIndex <= 7) {
       return true;
     }
     return false;
@@ -41,7 +41,7 @@ const Apartment = () => {
     // const cloudFrontDomain = 'd124q86xsdw2f2.cloudfront.net';
     let basePath = `/foto/banesat/${building}/${floor}/apartment${apartmentIndex}`;
     if (isAlternateImage) {
-      basePath = `/foto/banesat/${building}/Townhouses Kati 1/apartment${apartmentIndex}`; // Adjust the path for the alternate folder
+      basePath = `/foto/banesat/${building}/Townhouses Kati 11/apartment${apartmentIndex}`; // Adjust the path for the alternate folder
     }
     return `${basePath}.png`;
   };
