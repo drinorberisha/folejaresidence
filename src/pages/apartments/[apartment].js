@@ -6,6 +6,9 @@ import HomeButton from '@/components/HomeButton';
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
 
+import { MdSwapVert } from 'react-icons/md'; // Importing the switch icon
+
+
 const Apartment = () => {
   const isLandscape = useOrientation();
   const router = useRouter();
@@ -59,9 +62,13 @@ const Apartment = () => {
       </div>
 
       {shouldDisplaySwitchButton() && (
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-30">
-          <button onClick={() => setIsAlternateImage(!isAlternateImage)} className="bg-blue-500 text-white p-2 rounded mt-4">
-            Switch
+        <div className="absolute top-[15%] left-1/2 transform -translate-x-1/2 z-30">
+         <button 
+            onClick={() => setIsAlternateImage(!isAlternateImage)} 
+            className="bg-blue-500 text-white p-2 rounded mt-4 flex items-center justify-center"
+            aria-label="Switch Image"
+          >
+            <MdSwapVert className="text-2xl" /> {/* Adjust the icon size as needed */}
           </button>
         </div>
       )}
