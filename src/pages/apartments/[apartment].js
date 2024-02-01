@@ -31,7 +31,7 @@ const Apartment = () => {
     if (building === 'building7' && floor === 'Townhouses' && apartmentIndex >= 1 && apartmentIndex <= 9) {
       return true;
     }
-    if (building === 'building6' && floor === 'Townhouses Perdhese' && apartmentIndex >= 1 && apartmentIndex <= 7) {
+    if (building === 'building6' && floor === 'Townhouses' && apartmentIndex >= 1 && apartmentIndex <= 7) {
       return true;
     }
     return false;

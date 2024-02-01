@@ -30,9 +30,9 @@ const initialState = {
         { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building5-Kati karakteristik.png' }, 
     ],
     'building6':[
-      { id: 'floor1', name: 'Townhouses Kati 1', imagePath: '/foto/katet/building6-Baza e katit 1.png' },
-      { id: 'floor2', name: 'Townhouses Perdhese', imagePath: '/foto/katet/building6-Afarizem P.png' },
-        { id: 'floor3', name: 'Kati karakteristik', imagePath: '/foto/katet/building6-Kati karakteristik.png' },
+      // { id: 'floor1', name: 'Townhouses Kati 1', imagePath: '/foto/katet/building6-Baza e katit 1.png' },
+      { id: 'floor1', name: 'Townhouses', imagePath: '/foto/katet/building6-Afarizem P.png' },
+        { id: 'floor2', name: 'Kati karakteristik', imagePath: '/foto/katet/building6-Kati karakteristik.png' },
         // { id: 'floor3', name: 'Baza e katit 1', imagePath: '/foto/katet/building6-Baza e katit 1.png' }, 
     ],
     'building7':[
