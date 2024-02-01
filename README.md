@@ -24,10 +24,10 @@ Foleja Residence is a cutting-edge Next.js web application designed for a constr
 
 To get started with Foleja Residence, follow these steps:
 
-git clone https://github.com/drinorberisha/folejaresidence.git
-cd foleja-residence
-npm install
-npm run dev
+- git clone https://github.com/drinorberisha/folejaresidence.git
+- cd foleja-residence
+- npm install
+- npm run dev
 
 
 This will start the development server on `http://localhost:3000`, where you can view the application.
