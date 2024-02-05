@@ -10,7 +10,7 @@ import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
-
+// import { preloadImages } from '@/utils/preloadImages';
 
 
 import {Skeleton} from "@nextui-org/react";

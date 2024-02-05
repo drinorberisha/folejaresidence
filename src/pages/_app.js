@@ -5,11 +5,13 @@ import { store } from '../../store/store';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import {NextUIProvider} from '@nextui-org/react';
+import GoogleAnalytics from '@/components/google/GoogleAnalytics';
 
 function MyApp({ Component, pageProps }) {
   return( 
     <NextUIProvider>
       <Provider store={store}>
+        <GoogleAnalytics/>
         <Component {...pageProps} />
         <SpeedInsights/>
         <Analytics/>
