@@ -10,15 +10,15 @@ import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
+
+import Head from 'next/head';
 // import { preloadImages } from '@/utils/preloadImages';
 
 
 import {Skeleton} from "@nextui-org/react";
+import MyNavbar from '@/components/MyNavbar';
 
-// useOrientation Hook
 
-
-// Home Component
 const Home = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -52,9 +52,12 @@ const Home = () => {
   }
   return (
     <>
-      
+      <Head>
+        <title>Foleja Residence</title>
+      </Head>
+      <MyNavbar/>
+
       <div className="viewport relative">
-     
       {buildings.map((building) => (
         <BuildingButton
           key={building.id}

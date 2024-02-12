@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import {NextUIProvider} from '@nextui-org/react';
 import GoogleAnalytics from '@/components/google/GoogleAnalytics';
+import DeveloperBookmark from '@/components/DeveloperBookmark';
 
 function MyApp({ Component, pageProps }) {
   return( 
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         <SpeedInsights/>
         <Analytics/>
+        <DeveloperBookmark/>
       </Provider>
     </NextUIProvider>)
 }
