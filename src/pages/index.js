@@ -43,7 +43,7 @@ const Home = () => {
   // Image URLs and array
   const imageUrl1 = '/foto/baneri.jpg';
   const imageUrl2 = '/foto/situacioni.png';
-  const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg'];
+  const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg','/foto/punimet/foto15.jpeg'];
 
   const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
 
