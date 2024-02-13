@@ -39,6 +39,12 @@ const Floors = () => {
   const positionKey = `${selectedBuilding}-${currentFloor.name}`;
   const currentPositions = apartmentPositions[positionKey] || [];
 
+  const getTypeForApartment = (index) => {
+    // Assuming index starts from 0, adjust if your index starts from 1
+    const types = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    return types[index] || `Tipi ${index + 1}`; // Fallback to numeric types if you run out of letters
+  };
+
   const isDuplex = floorName === 'Townhouses Perdhese' || floorName === 'Townhouses';
   
   const handleApartmentClick = (apartmentIndex) => {
@@ -78,7 +84,7 @@ const Floors = () => {
             style={{ top: pos.top, left: pos.left }}
             onClick={() => handleApartmentClick(index)}
           >
-      {isDuplex ? `Duplex ${index + 1}` : `Banesa ${index + 1}`}    
+      {isDuplex ? `Duplex ${getTypeForApartment(index)}` : `Tipi ${getTypeForApartment(index)}`}    
           </button>
         ))}
       </div>

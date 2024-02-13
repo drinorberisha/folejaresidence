@@ -6,7 +6,7 @@ import HomeButton from '@/components/HomeButton';
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
 
-import { MdSwapVert } from 'react-icons/md'; // Importing the switch icon
+import { MdSwapVert } from 'react-icons/md';
 
 
 const Apartment = () => {
