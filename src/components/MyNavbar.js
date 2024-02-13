@@ -14,7 +14,7 @@ export default function App() {
         user: <TagUser className="text-danger" fill="currentColor" size={30} />,
       };
   return (
-    <Navbar
+    <Navbar style={{ backgroundColor: "#2c2c38" }}
       classNames={{
         item: [
           "flex",
@@ -31,10 +31,16 @@ export default function App() {
           "data-[active=true]:after:bg-primary",
         ],
       }}
-    >      <NavbarBrand>
-        
-        <p className="font-bold text-inherit">Foleja Residence</p>
+    >      
+      <NavbarBrand>
+      <div style={{ display: "flex", alignItems: "center" }} >
+        <NavbarBrand css={{ marginRight: "auto" }}>
+          <img src="./foto/logo123.png" alt="Foleja Residence Logo" style={{ height: '70px' }} />
+          <p style={{ fontSize: '19px', color: 'white', marginLeft: '10px' }}>Foleja Residence</p>
+        </NavbarBrand>
+      </div>
       </NavbarBrand>
+
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <Dropdown>
           <NavbarItem>
@@ -46,7 +52,7 @@ export default function App() {
                 radius="sm"
                 variant="light"
               >
-                Features
+                Tipet e banesave
               </Button>
             </DropdownTrigger>
           </NavbarItem>
@@ -59,17 +65,19 @@ export default function App() {
           >
             <DropdownItem
               key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Duplexet me ekskluzive - Kati 7"
               startContent={icons.scale}
+              href="floors/building7-Townhouses"
             >
-              Autoscaling
+              Townhouses - Objekti 7
             </DropdownItem>
             <DropdownItem
               key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Duplexet me ekskluzive - Kati 6"
               startContent={icons.activity}
+              href="/floors/building6-Townhouses"
             >
-              Usage Metrics
+             Townhouses - Objekti 6
             </DropdownItem>
             <DropdownItem
               key="production_ready"
@@ -99,11 +107,11 @@ export default function App() {
             Customers
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
           <Link color="foreground" href="#">
             Integrations
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
       <NavbarContent justify="end">
       <Input
@@ -122,7 +130,8 @@ export default function App() {
           <Link href="#">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+        
+          <Button as={Link} color="primary" href="tel:+38349200593" variant="flat">
             Kontakti
           </Button>
         </NavbarItem>

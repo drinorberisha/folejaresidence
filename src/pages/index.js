@@ -46,6 +46,12 @@ const Home = () => {
   const imageUrl2 = '/foto/situacioni.png';
   const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg'];
 
+  const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
+
+  // Second set of images for the new carousel
+  const secondImages = ['/foto/karusel2/k1.jpg', '/foto/karusel2/k2.jpg','/foto/karusel2/k3.jpg','/foto/karusel2/k4.jpg','/foto/karusel2/k5.jpg','/foto/karusel2/k6.jpg','/foto/karusel2/k7.jpg','/foto/karusel2/k8.jpg','/foto/karusel2/k9.jpg','/foto/karusel2/k10.jpg','/foto/karusel2/k11.jpg'];
+
+
 
   if (!isLandscape) {
     return <RotateMessage />;
@@ -77,6 +83,11 @@ const Home = () => {
           Shiko Punimet
         </button>
       </div>
+      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 space-y-4">
+          <button onClick={() => setIsSecondCarouselOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
+            Zbulo fshehtesine
+          </button>
+      </div>
 
       <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1}> 
         <Skeleton className='rounded'/>
@@ -89,6 +100,10 @@ const Home = () => {
       <Carousel images={images} isOpen={isCarouselOpen} onClose={closeCarousel}> 
         <Skeleton className='rounded'/>
       </Carousel>
+
+      <Carousel images={secondImages} isOpen={isSecondCarouselOpen} onClose={() => setIsSecondCarouselOpen(false)}>
+          <Skeleton className='rounded'/>
+        </Carousel>
     </div>
     </>
   );
