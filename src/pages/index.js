@@ -60,6 +60,8 @@ const Home = () => {
       <Head>
         <title>Foleja Residence</title>
       </Head>
+      
+
 
       <div className="viewport relative">
       {buildings.map((building) => (
@@ -70,6 +72,10 @@ const Home = () => {
           onClick={handleBuildingClick}
         />
       ))}
+      <div className="bg-white rounded-lg py-2 px-4 max-w-xl md:max-w-2xl mx-auto shadow-lg border border-gray-200 relative top-[20px]">
+  <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-[#FFD700]">Foleja Residence - Jaglanice, Prizren.</h1>
+</div>
+
       <div className="absolute left-4 top-1/2 transform -translate-y-1/2 space-y-4">
         <button onClick={() => showModal('modal1')} className="p-2 bg-blue-500 text-white rounded block">
           Investitoret
