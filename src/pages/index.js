@@ -8,6 +8,8 @@ import Link from 'next/link';
 import BuildingButton from '@/components/BuildingButton';
 import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
+import Carousel2 from '@/components/Carousel2';
+
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
 
@@ -46,10 +48,12 @@ const Home = () => {
   const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg','/foto/punimet/foto15.jpeg'];
 
   const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
+  const [isThirdCarouselOpen, setIsThirdCarouselOpen] = useState(false);
+
 
   // Second set of images for the new carousel
   const secondImages = ['/foto/karusel2/k1.jpg', '/foto/karusel2/k2.jpg','/foto/karusel2/k3.jpg','/foto/karusel2/k4.jpg','/foto/karusel2/k5.jpg','/foto/karusel2/k6.jpg','/foto/karusel2/k7.jpg','/foto/karusel2/k8.jpg','/foto/karusel2/k9.jpg','/foto/karusel2/k10.jpg','/foto/karusel2/k11.jpg'];
-
+  const thirdImages = ['/foto/karusel3/k1.jpg','/foto/karusel3/k2.jpg','/foto/karusel3/k3.jpg'];
 
 
   if (!isLandscape) {
@@ -88,9 +92,13 @@ const Home = () => {
         </button>
       </div>
       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 space-y-4">
+          <button onClick={() => setIsThirdCarouselOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
+          Çmimet dhe Ofertat
+          </button>
           <button onClick={() => setIsSecondCarouselOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
             Zbulo fshehtesine
           </button>
+         
       </div>
 
       <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1}> 
@@ -108,6 +116,9 @@ const Home = () => {
       <Carousel images={secondImages} isOpen={isSecondCarouselOpen} onClose={() => setIsSecondCarouselOpen(false)}>
           <Skeleton className='rounded'/>
         </Carousel>
+      <Carousel2 images={thirdImages} isOpen={isThirdCarouselOpen} onClose={() => setIsThirdCarouselOpen(false)}>
+          <Skeleton className='rounded'/>
+      </Carousel2>
     </div>
     </>
   );

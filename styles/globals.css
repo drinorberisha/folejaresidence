@@ -111,6 +111,12 @@ body {
   max-width: 1000px; /* Maximum width */
   max-height: 100vh; /* Maximum height */
 }
+.modal-container1 {
+  height: auto; /* Adjust height automatically */
+  padding: 20px; /* Default padding */
+  max-width: 1000px; /* Maximum width */
+  max-height: 100vh; /* Maximum height */
+}
 
 .modal-content img {
   max-width: 100%; /* Allow image to fill the modal */
@@ -126,6 +132,12 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  .foto3 {
+      height: 450px;
+      width: 225px;
+  }
+}
 
 /* Add to your global CSS file */
 
