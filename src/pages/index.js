@@ -8,11 +8,12 @@ import Link from 'next/link';
 import BuildingButton from '@/components/BuildingButton';
 import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
-import Carousel2 from '@/components/Carousel2';
 import ImageModal from '@/components/ImageModal';
 
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
+
+
 
 import Head from 'next/head';
 // import { preloadImages } from '@/utils/preloadImages';
@@ -43,22 +44,25 @@ const Home = () => {
   const openCarousel = () => setIsCarouselOpen(true);
   const closeCarousel = () => setIsCarouselOpen(false);
 
+  
+
+
   // Image URLs and array
   const imageUrl1 = '/foto/baneri.jpg';
   const imageUrl2 = '/foto/situacioni.png';
   const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg','/foto/punimet/foto15.jpeg'];
 
+
   const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
-  const [isThirdCarouselOpen, setIsThirdCarouselOpen] = useState(false);
 
 
   // Second set of images for the new carousel
   const secondImages = ['/foto/karusel2/k1.jpg', '/foto/karusel2/k2.jpg','/foto/karusel2/k3.jpg','/foto/karusel2/k4.jpg','/foto/karusel2/k5.jpg','/foto/karusel2/k6.jpg','/foto/karusel2/k7.jpg','/foto/karusel2/k8.jpg','/foto/karusel2/k9.jpg','/foto/karusel2/k10.jpg','/foto/karusel2/k11.jpg'];
 
 
-  const desktopImages = ['/foto/imagemodal/k22.jpeg', '/foto/imagemodal/k2.jpeg', '/foto/imagemodal/k3.jpeg'];
   const mobileImages = ['/foto/imagemodal/oferta1.jpeg', '/foto/imagemodal/oferta2.jpeg', '/foto/imagemodal/oferta3.jpeg'];
-  const imagesToUse = isLandscape ? mobileImages : desktopImages; 
+
+
 
 
   if (!isLandscape) {
@@ -124,7 +128,7 @@ const Home = () => {
       <ImageModal
         isOpen={isImageModalOpen}
         onClose={() => setIsImageModalOpen(false)}
-        images={imagesToUse}
+        images={mobileImages}
       />
     </div>
     </>

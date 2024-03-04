@@ -5,6 +5,8 @@ import Image from 'next/image';
 import BackButton from '@/components/BackButton'; // Adjust the path as necessary
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
+import { useImagePreloader } from '@/hooks/useImagePreloader'; // Import the custom hook
+import ThreeDotsWave from '@/components/three-dots-wave';
 
 const buttonPositions = {
   'building1': {
@@ -63,6 +65,11 @@ const Building = () => {
     router.push(`/floors/building${buildingId}-${floorName}`);
   };
 
+  const { isLoading } = useImagePreloader([currentBuilding?.imagePath].filter(Boolean));
+
+  if (isLoading) {
+    return <ThreeDotsWave/>; // Use your LoadingScreen component here
+  }
   if (!isLandscape) {
     return <RotateMessage />;
   }

@@ -7,7 +7,14 @@ import { Analytics } from '@vercel/analytics/react';
 import {NextUIProvider} from '@nextui-org/react';
 import GoogleAnalytics from '@/components/google/GoogleAnalytics';
 
+import imagePaths from './imagePaths.json';
+import { useImagePreloader } from '@/hooks/useImagePreloader';
+import ThreeDotsWave from '@/components/three-dots-wave';
+
 function MyApp({ Component, pageProps }) {
+  const { isLoading } = useImagePreloader(imagePaths);
+
+  if(isLoading) return <ThreeDotsWave/>;
   return( 
     <NextUIProvider>
       <Provider store={store}>
