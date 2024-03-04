@@ -14,7 +14,7 @@ import ThreeDotsWave from '@/components/three-dots-wave';
 function MyApp({ Component, pageProps }) {
   const { isLoading } = useImagePreloader(imagePaths);
 
-  if(isLoading) return <ThreeDotsWave/>;
+  if(isLoading) return <div>Loading ...</div>;
   return( 
     <NextUIProvider>
       <Provider store={store}>
