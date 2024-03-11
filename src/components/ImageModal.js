@@ -32,7 +32,7 @@ const ImageModal = ({ isOpen, onClose, images }) => {
   return (
     <div className="fixed inset-0 p-4 bg-black bg-opacity-50 flex justify-center items-center z-50">
     <div className="relative bg-white rounded-lg shadow-lg" style={modalStyle}>
-    <button onClick={onClose} className="absolute top-4 right-4 text-black z-50 font-bold text-2xl">✕</button>
+    <button onClick={onClose} className="absolute top-6 right-6 text-yellow z-50 font-bold text-2xl">✕</button>
         <div className="absolute top-3 left-3 flex space-x-2 z-50">
           {images.map((_, index) => (
             <button
