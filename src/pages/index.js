@@ -60,7 +60,7 @@ const Home = () => {
   const secondImages = ['/foto/karusel2/k1.jpg', '/foto/karusel2/k2.jpg','/foto/karusel2/k3.jpg','/foto/karusel2/k4.jpg','/foto/karusel2/k5.jpg','/foto/karusel2/k6.jpg','/foto/karusel2/k7.jpg','/foto/karusel2/k8.jpg','/foto/karusel2/k9.jpg','/foto/karusel2/k10.jpg','/foto/karusel2/k11.jpg'];
 
 
-  const mobileImages = ['/foto/imagemodal/oferta222.jpeg', '/foto/imagemodal/oferta333.jpeg', '/foto/imagemodal/oferta111.jpeg'];
+  const mobileImages = ['/foto/imagemodal/oferta222.jpeg', '/foto/imagemodal/oferta4.jpeg', '/foto/imagemodal/oferta111.jpeg'];
 
 
 
