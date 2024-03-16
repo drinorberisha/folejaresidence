@@ -56,8 +56,8 @@ const Home = () => {
   { type: 'image', src: '/foto/punimet/f1.jpeg' },
   { type: 'image', src: '/foto/punimet/f3.jpeg' },
   { type: 'image', src: '/foto/punimet/f4.jpeg' },
-  { type: 'image', src: '/foto/punimet/f11.jpeg' },
-  { type: 'image', src: '/foto/punimet/f12.jpeg' },
+  { type: 'image', src: '/foto/punimet/foto11.jpeg' },
+  { type: 'image', src: '/foto/punimet/foto12.jpeg' },
 
   { type: 'video', src: '/foto/punimet/video11.mp4' },
   ];
