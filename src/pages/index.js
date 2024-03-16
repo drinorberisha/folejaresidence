@@ -50,7 +50,14 @@ const Home = () => {
   // Image URLs and array
   const imageUrl1 = '/foto/baneri.jpg';
   const imageUrl2 = '/foto/situacioni.png';
-  const images = ['/foto/punimet/foto11.jpeg', '/foto/punimet/foto12.jpeg', '/foto/punimet/foto13.jpeg', '/foto/punimet/foto14.jpeg','/foto/punimet/foto15.jpeg'];
+  const images = [
+    { type: 'image', src: '/foto/punimet/f222.png' },
+  { type: 'image', src: '/foto/punimet/f2.jpeg' },
+  { type: 'image', src: '/foto/punimet/f1.jpeg' },
+  { type: 'image', src: '/foto/punimet/f3.jpeg' },
+  { type: 'image', src: '/foto/punimet/f4.jpeg' },
+  { type: 'video', src: '/foto/punimet/video.mp4' },
+  ];
 
 
   const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
@@ -117,7 +124,9 @@ const Home = () => {
         <Skeleton className='rounded'/>
       </Modal>
         
-      <Carousel images={images} isOpen={isCarouselOpen} onClose={closeCarousel}> 
+      // Assuming your Carousel component expects a prop named "media"
+      <Carousel media={images} isOpen={isCarouselOpen} onClose={closeCarousel} >
+
         <Skeleton className='rounded'/>
       </Carousel>
 
