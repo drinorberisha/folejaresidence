@@ -124,7 +124,6 @@ const Home = () => {
         <Skeleton className='rounded'/>
       </Modal>
         
-      // Assuming your Carousel component expects a prop named "media"
       <Carousel media={images} isOpen={isCarouselOpen} onClose={closeCarousel} >
 
         <Skeleton className='rounded'/>
