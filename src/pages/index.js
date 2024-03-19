@@ -58,8 +58,6 @@ const Home = () => {
   { type: 'image', src: '/foto/punimet/f4.jpeg' },
   { type: 'image', src: '/foto/punimet/foto11.jpeg' },
   { type: 'image', src: '/foto/punimet/foto12.jpeg' },
-
-  { type: 'video', src: '/foto/punimet/video11.mp4' },
   ];
 
 
@@ -128,13 +126,12 @@ const Home = () => {
       </Modal>
         
       <Carousel media={images} isOpen={isCarouselOpen} onClose={closeCarousel} >
-
         <Skeleton className='rounded'/>
       </Carousel>
 
       <Carousel images={secondImages} isOpen={isSecondCarouselOpen} onClose={() => setIsSecondCarouselOpen(false)}>
           <Skeleton className='rounded'/>
-        </Carousel>
+      </Carousel>
         
       <ImageModal
         isOpen={isImageModalOpen}
