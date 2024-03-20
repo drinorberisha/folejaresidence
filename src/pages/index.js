@@ -71,8 +71,6 @@ const Home = () => {
   const mobileImages = [ '/foto/imagemodal/oferta4.jpeg', '/foto/imagemodal/oferta111.jpeg'];
 
 
-m
-
   if (!isLandscape) {
     return <RotateMessage />;
   }
