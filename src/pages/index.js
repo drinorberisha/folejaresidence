@@ -65,8 +65,19 @@ const Home = () => {
 
 
   // Second set of images for the new carousel
-  const secondImages = ['/foto/karusel2/k1.jpg', '/foto/karusel2/k2.jpg','/foto/karusel2/k3.jpg','/foto/karusel2/k4.jpg','/foto/karusel2/k5.jpg','/foto/karusel2/k6.jpg','/foto/karusel2/k7.jpg','/foto/karusel2/k8.jpg','/foto/karusel2/k9.jpg','/foto/karusel2/k10.jpg','/foto/karusel2/k11.jpg'];
-
+  const secondImages = [
+    { type: 'image', src: '/foto/karusel2/k1.jpg' },
+    { type: 'image', src: '/foto/karusel2/k2.jpg' },
+    { type: 'image', src: '/foto/karusel2/k3.jpg' },
+    { type: 'image', src: '/foto/karusel2/k4.jpg' },
+    { type: 'image', src: '/foto/karusel2/k5.jpg' },
+    { type: 'image', src: '/foto/karusel2/k6.jpg' },
+    { type: 'image', src: '/foto/karusel2/k7.jpg' },
+    { type: 'image', src: '/foto/karusel2/k8.jpg' },
+    { type: 'image', src: '/foto/karusel2/k9.jpg' },
+    { type: 'image', src: '/foto/karusel2/k10.jpg' },
+    { type: 'image', src: '/foto/karusel2/k11.jpg' },
+  ]
 
   const mobileImages = [ '/foto/imagemodal/oferta4.jpeg', '/foto/imagemodal/oferta111.jpeg'];
 
@@ -110,9 +121,9 @@ const Home = () => {
           <button onClick={() => setIsImageModalOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
           Çmimet dhe Ofertat
           </button>
-          <button onClick={() => setIsSecondCarouselOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
+          {/* <button onClick={() => setIsSecondCarouselOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
             Zbulo fshehtesine
-          </button>
+          </button> */}
       </div>
 
       <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1}> 
@@ -127,7 +138,7 @@ const Home = () => {
         <Skeleton className='rounded'/>
       </Carousel>
 
-      <Carousel images={secondImages} isOpen={isSecondCarouselOpen} onClose={() => setIsSecondCarouselOpen(false)}>
+      <Carousel media={secondImages} isOpen={isSecondCarouselOpen} onClose={() => setIsSecondCarouselOpen(false)}>
           <Skeleton className='rounded'/>
       </Carousel>
         
