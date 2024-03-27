@@ -79,7 +79,7 @@ const Home = () => {
     { type: 'image', src: '/foto/karusel2/k11.jpg' },
   ]
 
-  const mobileImages = [ '/foto/imagemodal/oferta4.jpeg', '/foto/imagemodal/oferta111.jpeg'];
+  const mobileImages = [ '/foto/imagemodal/oferta4.jpeg', '/foto/imagemodal/oferta111.jpeg', '/foto/imagemodal/k4.jpeg'];
 
 
   if (!isLandscape) {
