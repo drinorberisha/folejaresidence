@@ -14,6 +14,7 @@ const LoadingContainer = {
   height: "5rem",
   display: "flex",
   justifyContent: "space-around",
+  alignItems: "center",
 };
 
 const ContainerVariants = {
@@ -48,11 +49,16 @@ export default function ThreeDotsWave() {
   return (
     <div
       style={{
-        paddingTop: "5rem",
+        position: "fixed",
+        top: 0,
+        left: 0,
         width: "100%",
+        height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: "#ffffff", // White background to avoid black screen
+        zIndex: 9999, // Ensure it's on top of other elements
       }}
     >
       <motion.div

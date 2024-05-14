@@ -47,6 +47,7 @@ const ImageModal = ({ isOpen, onClose, images }) => {
           src={images[activeImage]}
           alt="Dynamic background"
           layout="fill"
+          loading='lazy'
           objectFit="contain"
           className="rounded-lg"
         />

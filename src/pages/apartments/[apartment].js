@@ -39,9 +39,9 @@ const Apartment = () => {
 
   const getImagePath = (building, floor, apartmentIndex, isAlternateImage) => {
     // const cloudFrontDomain = 'd124q86xsdw2f2.cloudfront.net';
-    let basePath = `/foto/banesat/${building}/${floor}/apartment${apartmentIndex}`;
+    let basePath = `https://d25pbxzxwgybkx.cloudfront.net/foto/banesat/${building}/${floor}/apartment${apartmentIndex}`;
     if (isAlternateImage) {
-      basePath = `/foto/banesat/${building}/Townhouses Kati 11/apartment${apartmentIndex}`; // Adjust the path for the alternate folder
+      basePath = `https://d25pbxzxwgybkx.cloudfront.net/foto/banesat/${building}/Townhouses Kati 11/apartment${apartmentIndex}`; // Adjust the path for the alternate folder
     }
     return `${basePath}.png`;
   };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState, useEffect}from 'react';
 import '../../styles/globals.css';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
@@ -10,11 +10,29 @@ import GoogleAnalytics from '@/components/google/GoogleAnalytics';
 import imagePaths from './imagePaths.json';
 import { useImagePreloader } from '@/hooks/useImagePreloader';
 import ThreeDotsWave from '@/components/three-dots-wave';
-
+import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }) {
-  const { isLoading } = useImagePreloader(imagePaths);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  if(isLoading) return <div>Loading ...</div>;
+  useEffect(() => {
+    const handleStart = () => setLoading(true);
+    const handleComplete = () => setLoading(false);
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router]);
+
+  if (loading) {
+    return <ThreeDotsWave />;
+  }
   return( 
     <NextUIProvider>
       <Provider store={store}>

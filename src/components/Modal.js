@@ -15,7 +15,7 @@ const Modal = ({ isOpen, onClose, imageUrl }) => {
           X
         </button>
         <div className="modal-content">
-          <Image src={imageUrl} width={920} height={600} alt="Modal Content"/>
+          <Image src={imageUrl} width={920} height={600} loading='lazy' alt="Modal Content"/>
         </div>
       </div>
     </div>

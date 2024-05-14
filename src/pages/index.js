@@ -20,7 +20,7 @@ import Head from 'next/head';
 
 
 import {Skeleton} from "@nextui-org/react";
-
+import config from '../../config';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -48,16 +48,16 @@ const Home = () => {
 
 
   // Image URLs and array
-  const imageUrl1 = '/foto/baneri.jpg';
-  const imageUrl2 = '/foto/situacioni.png';
+  const imageUrl1 = `${config.cF}/foto/baneri.jpg`;
+  const imageUrl2 = `${config.cF}/foto/situacioni.png`;
   const images = [
-    { type: 'image', src: '/foto/punimet/f222.png' },
-  { type: 'image', src: '/foto/punimet/f2.jpeg' },
-  { type: 'image', src: '/foto/punimet/f1.jpeg' },
-  { type: 'image', src: '/foto/punimet/f3.jpeg' },
-  { type: 'image', src: '/foto/punimet/f4.jpeg' },
-  { type: 'image', src: '/foto/punimet/foto11.jpeg' },
-  { type: 'image', src: '/foto/punimet/foto12.jpeg' },
+  { type: 'image', src: `${config.cF}/foto/punimet/f222.png` },
+  { type: 'image', src: `${config.cF}/foto/punimet/f2.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/f1.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/f3.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/f4.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/foto11.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/foto12.jpeg` },
   ];
 
 
@@ -66,25 +66,26 @@ const Home = () => {
 
   // Second set of images for the new carousel
   const secondImages = [
-    { type: 'image', src: '/foto/karusel2/k1.jpg' },
-    { type: 'image', src: '/foto/karusel2/k2.jpg' },
-    { type: 'image', src: '/foto/karusel2/k3.jpg' },
-    { type: 'image', src: '/foto/karusel2/k4.jpg' },
-    { type: 'image', src: '/foto/karusel2/k5.jpg' },
-    { type: 'image', src: '/foto/karusel2/k6.jpg' },
-    { type: 'image', src: '/foto/karusel2/k7.jpg' },
-    { type: 'image', src: '/foto/karusel2/k8.jpg' },
-    { type: 'image', src: '/foto/karusel2/k9.jpg' },
-    { type: 'image', src: '/foto/karusel2/k10.jpg' },
-    { type: 'image', src: '/foto/karusel2/k11.jpg' },
+    { type: 'image', src: `${config.cF}/foto/karusel2/k1.jpg` },
+    { type: 'image', src: `${config.cF}/foto/karusel2/k2.jpg` },
+    { type: 'image', src: `${config.cF}/foto/karusel2/k3.jpg` },
+    { type: 'image', src: `${config.cF}/foto/karusel2/k4.jpg` },
+    { type: 'image', src: `${config.cF}/foto/karusel2/k5.jpg` },
+    { type: `image`, src: `${config.cF}/foto/karusel2/k6.jpg` },
+    { type: `image`, src: `${config.cF}/foto/karusel2/k7.jpg` },
+    { type: `image`, src: `${config.cF}/foto/karusel2/k8.jpg` },
+    { type: `image`, src: `${config.cF}/foto/karusel2/k9.jpg` },
+    { type: `image`, src: `${config.cF}/foto/karusel2/k10.jpg` },
+    { type: `image`, src: `${config.cF}/foto/karusel2/k11.jpg` },
   ]
 
-  const mobileImages = [ '/foto/imagemodal/oferta4.jpeg', '/foto/imagemodal/oferta111.jpeg', '/foto/imagemodal/k4.jpeg'];
+  const mobileImages = [ `${config.cF}/foto/imagemodal/oferta4.jpeg`, `${config.cF}/foto/imagemodal/oferta111.jpeg`, `${config.cF}/foto/imagemodal/k4.jpeg`];
 
 
   if (!isLandscape) {
     return <RotateMessage />;
   }
+  
   return (
     <>
       <Head>
