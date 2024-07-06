@@ -7,8 +7,6 @@ import { Analytics } from '@vercel/analytics/react';
 import {NextUIProvider} from '@nextui-org/react';
 import GoogleAnalytics from '@/components/google/GoogleAnalytics';
 
-import imagePaths from './imagePaths.json';
-import { useImagePreloader } from '@/hooks/useImagePreloader';
 import ThreeDotsWave from '@/components/three-dots-wave';
 import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }) {

@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { selectBuilding } from '../../store/features/buildingSlice';
 
-import Link from 'next/link';
 import BuildingButton from '@/components/BuildingButton';
 import Modal from '@/components/Modal';
 import Carousel from '@/components/Carousel';
