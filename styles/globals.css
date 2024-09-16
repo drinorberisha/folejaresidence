@@ -37,7 +37,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://d25pbxzxwgybkx.cloudfront.net/foto/start.jpg');
+  background-image: url('./homeNew.png');
   background-size: cover;
   background-position: center;
 }
