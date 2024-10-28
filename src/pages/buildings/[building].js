@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import BackButton from '@/components/BackButton'; // Adjust the path as necessary
 import RotateMessage from '@/components/RotateMessage';
@@ -52,7 +53,7 @@ const buttonPositions = {
 };
 
 const Building = () => {
-  const isLandscape = useOrientation(); // use the hook
+  const isLandscape = useOrientation();
   const dispatch = useDispatch();
   const router = useRouter();
   const { building: buildingId } = router.query;
@@ -73,12 +74,6 @@ const Building = () => {
     return buttonPositions[`building${buildingId}`] || {};
   }, [buildingId]);
   
-  const handleFloorClick = useCallback(
-    (floorName) => () => {
-      router.push(`/floors/building${buildingId}-${floorName}`);
-    },
-    [router, buildingId]
-  );
 
   if (!isLandscape) {
     return <RotateMessage />;
@@ -100,17 +95,20 @@ const Building = () => {
       objectFit="contain"
       priority 
     />
-           <BackButton />
+     <BackButton />
         {Object.entries(floors).map(([floorName, position]) => (
-          <button
-            key={floorName}
-            className="absolute bg-blue-500 text-white rounded p-2 sm:p-1 sm:text-sm"
-            style={{ top: position.top, left: position.left }}
-            onClick={handleFloorClick(floorName)}
-            >
+          <Link href={`/floors/building${buildingId}-${floorName}`}
+          key={floorName}
+          className="absolute bg-blue-500 text-white rounded p-2 sm:p-1 sm:text-sm"
+          style={{ top: position.top, left: position.left }}
+          >
+      
             {floorName}
-          </button>
+ 
+        </Link>
         ))}
+       
+
       </div>
     </div>
     </>

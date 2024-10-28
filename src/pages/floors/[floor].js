@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
+import Link from 'next/link';
 import BackButton from '@/components/BackButton';
 import HomeButton from '@/components/HomeButton';
 import RotateMessage from '@/components/RotateMessage';
@@ -54,12 +55,7 @@ const Floors = () => {
 
   const isDuplex = floorName === 'Townhouses Perdhese' || floorName === 'Townhouses';
   
-  const handleApartmentClick = useCallback(
-    (apartmentIndex) => () => {
-      router.push(`/apartments/${positionKey}-${apartmentIndex + 1}`);
-    },
-    [router, positionKey]
-  );
+
 
 
   if (!isLandscape) {
@@ -87,14 +83,13 @@ const Floors = () => {
           
         )}
         {currentPositions.map((pos, index) => (
-          <button
-            key={index}
-            className="absolute bg-blue-500 text-white rounded p-4 sm:p-2 sm:text-xs" // Larger size for larger screens, smaller for sm screens
-            style={{ top: pos.top, left: pos.left }}
-            onClick={handleApartmentClick(index)}
-          >
-        {isDuplex ? `Duplex ${getTypeForApartment(index)}` : `Tipi ${getTypeForApartment(index)}`}    
-          </button>
+          <Link href={`/apartments/${positionKey}-${index + 1}`}
+          key={index}
+          className="absolute bg-blue-500 text-white rounded p-4 sm:p-2 sm:text-xs"
+          style={{ top: pos.top, left: pos.left }}>
+          
+            {isDuplex ? `Duplex ${getTypeForApartment(index)}` : `Tipi ${getTypeForApartment(index)}`}
+        </Link>
         ))}
       </div>
       {/* Additional content */}

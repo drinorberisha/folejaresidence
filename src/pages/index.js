@@ -6,13 +6,13 @@ import dynamic from 'next/dynamic';
 
 import BuildingButton from '@/components/BuildingButton';
 const Modal = dynamic(() => import('@/components/Modal'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => null,
 });
 const Carousel = dynamic(() => import('@/components/Carousel'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => null,
 });
 const ImageModal = dynamic(() => import('@/components/ImageModal'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => null,
 });
 
 import RotateMessage from '@/components/RotateMessage';
@@ -105,7 +105,6 @@ const Home = () => {
           key={building.id}
           buildingId={building.id}
           label={building.name}
-          onClick={handleBuildingClick}
         />
       ))}
       <div className="bg-white rounded-lg py-2 px-4 max-w-xl md:max-w-2xl mx-auto shadow-lg border border-gray-200 relative top-[20px]">
@@ -132,27 +131,45 @@ const Home = () => {
           </button> */}
       </div>
 
-      <Modal isOpen={openModal === 'modal1'} onClose={closeModal} imageUrl={imageUrl1}> 
-        <Skeleton className='rounded'/>
-      </Modal>
-      
-      <Modal isOpen={openModal === 'modal2'} onClose={closeModal} imageUrl={imageUrl2}>
-        <Skeleton className='rounded'/>
-      </Modal>
-        
-      <Carousel media={images} isOpen={isCarouselOpen} onClose={closeCarousel} >
-        <Skeleton className='rounded'/>
-      </Carousel>
+      {openModal === 'modal1' && (
+  <Modal isOpen onClose={closeModal} imageUrl={imageUrl1}>
+    <Skeleton className='rounded'/>
+  </Modal>
+)}
 
-      <Carousel media={secondImages} isOpen={isSecondCarouselOpen} onClose={() => setIsSecondCarouselOpen(false)}>
+      {openModal === 'modal2' && (
+  <Modal isOpen onClose={closeModal} imageUrl={imageUrl2}>
+    <Skeleton className='rounded'/>
+  </Modal>
+)}
+        
+    
+
+      {isCarouselOpen && (
+    <Carousel media={images} isOpen onClose={closeCarousel} >
+    <Skeleton className='rounded'/>
+  </Carousel>
+)}
+
+
+
+
+    {isSecondCarouselOpen && (
+      <Carousel media={secondImages} isOpen onClose={() => setIsSecondCarouselOpen(false)}>
           <Skeleton className='rounded'/>
       </Carousel>
-        
+    )}
+    
+
+
+
+        {isImageModalOpen && (
       <ImageModal
-        isOpen={isImageModalOpen}
+        isOpen
         onClose={() => setIsImageModalOpen(false)}
         images={mobileImages}
       />
+    )}
     </div>
     </>
   );

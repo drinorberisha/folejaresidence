@@ -1,7 +1,7 @@
 // RotateMessage.js
 import React from 'react';
 
-const RotateMessage = () => {
+const RotateMessage = React.memo( () => {
   return (
     <div className="rotate-message">
       <video autoPlay loop muted playsInline>
@@ -11,6 +11,6 @@ const RotateMessage = () => {
       Please rotate your device to horizontal view for the best experience
     </div>
   );
-};
+});
 
 export default RotateMessage;

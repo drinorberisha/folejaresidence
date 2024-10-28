@@ -2,15 +2,18 @@
 import { useState, useEffect } from 'react';
 
 const useOrientation = () => {
-  const [isLandscape, setIsLandscape] = useState(undefined);
+  const [isLandscape, setIsLandscape] = useState(
+    typeof window !== 'undefined' ? window.innerWidth > window.innerHeight : true
+  );
 
   useEffect(() => {
-    const getOrientation = () => window.innerWidth > window.innerHeight;
-    setIsLandscape(getOrientation());
-
-    const handleResize = () => setIsLandscape(getOrientation());
+    const handleResize = () => {
+      setIsLandscape(window.innerWidth > window.innerHeight);
+    };
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return isLandscape;

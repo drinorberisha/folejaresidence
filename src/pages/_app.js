@@ -1,4 +1,5 @@
 import React , {useState, useEffect}from 'react';
+import dynamic from 'next/dynamic'; 
 import '../../styles/globals.css';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
@@ -7,8 +8,9 @@ import { Analytics } from '@vercel/analytics/react';
 import {NextUIProvider} from '@nextui-org/react';
 import GoogleAnalytics from '@/components/google/GoogleAnalytics';
 
-import ThreeDotsWave from '@/components/three-dots-wave';
-import { useRouter } from 'next/router';
+const ThreeDotsWave = dynamic(() => import('@/components/three-dots-wave'), {
+  ssr: false,
+});import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
