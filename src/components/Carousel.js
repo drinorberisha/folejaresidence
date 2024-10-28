@@ -16,7 +16,7 @@ const Carousel = ({ media, isOpen, onClose }) => {
 
   const renderMedia = (item) => {
     if (item.type === 'image') {
-      return <Image src={item.src} width={960} height={720} alt={`Slide ${currentIndex}`} />;
+      return <Image src={item.src} width={960} height={720} layout="responsive" alt={`Slide ${currentIndex}`} />;
     } else if (item.type === 'video') {
       return (
         <video width="960" height="720" controls preload="auto" loop>

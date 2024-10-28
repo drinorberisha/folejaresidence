@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import Image from 'next/image';
 import BackButton from '@/components/BackButton'; // Adjust the path as necessary
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
+import { selectBuilding } from '../../../store/features/buildingSlice';
+import Image from 'next/image';
+
+import { useDispatch } from 'react-redux';
 // import { useImagePreloader } from '@/hooks/useImagePreloader'; // Import the custom hook
 // import ThreeDotsWave from '@/components/three-dots-wave';
 
@@ -50,7 +53,7 @@ const buttonPositions = {
 
 const Building = () => {
   const isLandscape = useOrientation(); // use the hook
-
+  const dispatch = useDispatch();
   const router = useRouter();
   const { building: buildingId } = router.query;
   const buildings = useSelector(state => state.building.buildings);
@@ -60,16 +63,23 @@ const Building = () => {
     return <p>Building not found</p>;
   }
 
-  const floors = buttonPositions[`building${buildingId}`] || {};
-  const handleFloorClick = (floorName) => {
-    router.push(`/floors/building${buildingId}-${floorName}`);
-  };
+  useEffect(() => {
+    if (buildingId) {
+      dispatch(selectBuilding(buildingId));
+    }
+  }, [buildingId, dispatch]);
+  
+  const floors = useMemo(() => {
+    return buttonPositions[`building${buildingId}`] || {};
+  }, [buildingId]);
+  
+  const handleFloorClick = useCallback(
+    (floorName) => () => {
+      router.push(`/floors/building${buildingId}-${floorName}`);
+    },
+    [router, buildingId]
+  );
 
-  // const { isLoading } = useImagePreloader([currentBuilding?.imagePath].filter(Boolean));
-
-  // if (isLoading) {
-  //   return <ThreeDotsWave/>; // Use your LoadingScreen component here
-  // }
   if (!isLandscape) {
     return <RotateMessage />;
   }
@@ -81,21 +91,23 @@ const Building = () => {
    
       <div 
         className="absolute w-full h-full bg-no-repeat bg-center z-10" 
-        style={{ 
-          backgroundImage: `url(${currentBuilding.imagePath})`, 
-          backgroundSize: 'contain' 
-        }}
+        
       >
+        <Image
+      src={currentBuilding.imagePath}
+      alt={`Building ${buildingId}`}
+      layout="fill"
+      objectFit="contain"
+      priority 
+    />
            <BackButton />
-        {/* Render buttons for each floor based on their positions */}
         {Object.entries(floors).map(([floorName, position]) => (
           <button
             key={floorName}
             className="absolute bg-blue-500 text-white rounded p-2 sm:p-1 sm:text-sm"
             style={{ top: position.top, left: position.left }}
-            
-            onClick={() => handleFloorClick(floorName)}
-          >
+            onClick={handleFloorClick(floorName)}
+            >
             {floorName}
           </button>
         ))}

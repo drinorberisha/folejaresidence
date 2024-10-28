@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
@@ -36,8 +36,15 @@ const Floors = () => {
     return <p>Floor not found</p>;
   }
 
-  const positionKey = `${selectedBuilding}-${currentFloor.name}`;
-  const currentPositions = apartmentPositions[positionKey] || [];
+  const positionKey = useMemo(
+    () => `${selectedBuilding}-${currentFloor.name}`,
+    [selectedBuilding, currentFloor.name]
+  );
+  
+  const currentPositions = useMemo(
+    () => apartmentPositions[positionKey] || [],
+    [positionKey]
+  );
 
   const getTypeForApartment = (index) => {
     // Assuming index starts from 0, adjust if your index starts from 1
@@ -47,10 +54,12 @@ const Floors = () => {
 
   const isDuplex = floorName === 'Townhouses Perdhese' || floorName === 'Townhouses';
   
-  const handleApartmentClick = (apartmentIndex) => {
-    // Navigate to the apartment page with a specific identifier
-    router.push(`/apartments/${positionKey}-${apartmentIndex + 1}`);
-  };
+  const handleApartmentClick = useCallback(
+    (apartmentIndex) => () => {
+      router.push(`/apartments/${positionKey}-${apartmentIndex + 1}`);
+    },
+    [router, positionKey]
+  );
 
 
   if (!isLandscape) {
@@ -82,9 +91,9 @@ const Floors = () => {
             key={index}
             className="absolute bg-blue-500 text-white rounded p-4 sm:p-2 sm:text-xs" // Larger size for larger screens, smaller for sm screens
             style={{ top: pos.top, left: pos.left }}
-            onClick={() => handleApartmentClick(index)}
+            onClick={handleApartmentClick(index)}
           >
-      {isDuplex ? `Duplex ${getTypeForApartment(index)}` : `Tipi ${getTypeForApartment(index)}`}    
+        {isDuplex ? `Duplex ${getTypeForApartment(index)}` : `Tipi ${getTypeForApartment(index)}`}    
           </button>
         ))}
       </div>

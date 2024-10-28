@@ -8,5 +8,3 @@ export const store = configureStore({
     floor: floorReducer,
   },
 });
-
-// Rest of the store configuration

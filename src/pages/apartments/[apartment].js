@@ -80,7 +80,6 @@ const Apartment = () => {
           layout="fill"
           objectFit="contain"
           quality={100}
-          unoptimized={true}
         />
       </div>
       {/* Additional content */}

@@ -1,13 +1,19 @@
 // index.js
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useCallback } from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
 import { useRouter } from 'next/router';
-import { selectBuilding } from '../../store/features/buildingSlice';
+import dynamic from 'next/dynamic';
 
 import BuildingButton from '@/components/BuildingButton';
-import Modal from '@/components/Modal';
-import Carousel from '@/components/Carousel';
-import ImageModal from '@/components/ImageModal';
+const Modal = dynamic(() => import('@/components/Modal'), {
+  loading: () => <p>Loading...</p>,
+});
+const Carousel = dynamic(() => import('@/components/Carousel'), {
+  loading: () => <p>Loading...</p>,
+});
+const ImageModal = dynamic(() => import('@/components/ImageModal'), {
+  loading: () => <p>Loading...</p>,
+});
 
 import RotateMessage from '@/components/RotateMessage';
 import useOrientation from '@/hooks/useOrientation';
@@ -15,16 +21,14 @@ import useOrientation from '@/hooks/useOrientation';
 
 
 import Head from 'next/head';
-// import { preloadImages } from '@/utils/preloadImages';
 
 
 import {Skeleton} from "@nextui-org/react";
 import config from '../../config';
 
 const Home = () => {
-  const dispatch = useDispatch();
   const router = useRouter();
-  const buildings = useSelector((state) => state.building.buildings);
+  const buildings = useSelector((state) => state.building.buildings, shallowEqual);
   const isLandscape = useOrientation(); // use the hook
 
   // State and handlers
@@ -32,10 +36,12 @@ const Home = () => {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   // Handle building click
-  const handleBuildingClick = (buildingId) => {
-    dispatch(selectBuilding(buildingId));
-    router.push(`/buildings/${buildingId}`);
-  };
+  const handleBuildingClick = useCallback(
+    (buildingId) => {
+      router.push(`/buildings/${buildingId}`);
+    },
+    [router]
+  );
 
   // Show modal and carousel handlers
   const showModal = (modalId) => setOpenModal(modalId);
