@@ -126,9 +126,7 @@ const Home = () => {
           <button onClick={() => setIsImageModalOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
           Çmimet dhe Ofertat
           </button>
-          {/* <button onClick={() => setIsSecondCarouselOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
-            Zbulo fshehtesine
-          </button> */}
+         
       </div>
 
       {openModal === 'modal1' && (
