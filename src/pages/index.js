@@ -56,14 +56,17 @@ const Home = () => {
   const imageUrl1 = `${config.cF}/foto/baneri.jpg`;
   const imageUrl2 = `${config.cF}/foto/situacioni.png`;
   const images = [
-  { type: 'image', src: `${config.cF}/foto/punimet/f222.png` },
-  { type: 'image', src: `${config.cF}/foto/punimet/f2.jpeg` },
-  { type: 'image', src: `${config.cF}/foto/punimet/f1.jpeg` },
-  { type: 'image', src: `${config.cF}/foto/punimet/f3.jpeg` },
-  { type: 'image', src: `${config.cF}/foto/punimet/f4.jpeg` },
-  { type: 'image', src: `${config.cF}/foto/punimet/foto11.jpeg` },
-  { type: 'image', src: `${config.cF}/foto/punimet/foto12.jpeg` },
-  ];
+    { type: 'image', src: `${config.cF}/foto/punimet/f2.jpeg` },
+    { type: 'image', src: `${config.cF}/foto/punimet/f4.jpeg` },
+    { type: 'image', src: `${config.cF}/foto/punimet/armatura1.jpeg` },
+    { type: 'image', src: `${config.cF}/foto/punimet/armatura2.jpeg` },
+    { type: 'image', src: `${config.cF}/foto/punimet/armatura3.jpeg` },
+    { type: 'image', src: `${config.cF}/foto/punimet/armatura4.jpeg` },
+    { type: 'image', src: `${config.cF}/foto/punimet/armatura5.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/punimet5.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/punimet6.jpeg` },
+  { type: 'image', src: `${config.cF}/foto/punimet/punimet7.jpeg` },
+];
 
 
   const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
