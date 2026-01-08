@@ -72,7 +72,7 @@ const Home = () => {
   const [isSecondCarouselOpen, setIsSecondCarouselOpen] = useState(false);
 
 
-  // Second set of images for the new carousel
+  // Second set of images for the new carousel/deploy message
   const secondImages = [
     { type: 'image', src: `${config.cF}/foto/karusel2/k1.jpg` },
     { type: 'image', src: `${config.cF}/foto/karusel2/k2.jpg` },
