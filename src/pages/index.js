@@ -87,7 +87,7 @@ const Home = () => {
     { type: `image`, src: `${config.cF}/foto/karusel2/k11.jpg` },
   ]
 
-  const mobileImages = [ `${config.cF}/foto/imagemodal/oferta4.jpeg`, `${config.cF}/foto/imagemodal/oferta111.jpeg`, `${config.cF}/foto/imagemodal/k4.jpeg`];
+  const mobileImages = [ `${config.cF}/foto/imagemodal/oferta4.jpeg`, `${config.cF}/foto/imagemodal/oferta111.jpeg`, `${config.cF}/foto/imagemodal/k4.jpg`];
 
 
   if (!isLandscape) {
