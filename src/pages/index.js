@@ -126,9 +126,9 @@ const Home = () => {
         </button>
       </div>
       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 space-y-4">
-          <button onClick={() => setIsImageModalOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
+          {/* <button onClick={() => setIsImageModalOpen(true)} className="p-2 bg-blue-500 text-white rounded block">
           Çmimet dhe Ofertat
-          </button>
+          </button> */}
          
       </div>
 
